@@ -1,0 +1,274 @@
+{
+    "type": "bundle",
+    "id": "bundle--7048cac7-fc29-4dce-baac-5ae05721a466",
+    "objects": [
+        {
+            "id": "identity--8d244a90-2cc0-4600-a5a0-e5a4b3c8d7c3",
+            "type": "identity",
+            "spec_version": "2.1",
+            "name": "AlienVault",
+            "identity_class": "organization",
+            "labels": [
+                "identity"
+            ],
+            "created": "2020-06-08T08:57:31.198Z",
+            "modified": "2020-06-08T08:57:31.198Z",
+            "x_opencti_identity_type": "organization",
+            "x_opencti_id": "0680fffb-fc28-44d1-b1ab-b14a6b46a0c6"
+        },
+        {
+            "type": "marking-definition",
+            "spec_version": "2.1",
+            "id": "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da",
+            "created": "2017-01-20T00:00:00.000Z",
+            "definition_type": "tlp",
+            "name": "TLP:GREEN",
+            "definition": {
+                "tlp": "green"
+            }
+        },
+        {
+            "id": "observed-data--61171a50-ba05-4278-afe2-3743d2e6057f",
+            "type": "observed-data",
+            "number_observed": 1,
+            "objects": [
+                {
+                    "x_opencti_observable_type": "file-md5",
+                    "x_opencti_observable_value": "d16d998989e7a3ac7b77c04f567423d2",
+                    "type": "file-md5"
+                }
+            ]
+        },
+        {
+            "id": "indicator--1dad7483-9956-4d56-a5bf-608cfbca93b1",
+            "type": "indicator",
+            "spec_version": "2.1",
+            "name": "d16d998989e7a3ac7b77c04f567423d2",
+            "labels": [
+                "indicator"
+            ],
+            "description": "MD5 of 3cef0003f06b16f416be8758ccc4e3408576fb4a",
+            "pattern": "[file:hashes.MD5 = 'd16d998989e7a3ac7b77c04f567423d2']",
+            "valid_from": "2020-06-03T15:56:00.000Z",
+            "valid_until": "2021-06-03T15:56:00.000Z",
+            "pattern_type": "stix",
+            "created": "2020-06-08T08:57:37.691Z",
+            "modified": "2020-06-08T08:57:37.691Z",
+            "x_opencti_score": 50,
+            "x_opencti_id": "f37e5125-74c2-4faa-91ed-e7d228c76f37",
+            "created_by_ref": "identity--8d244a90-2cc0-4600-a5a0-e5a4b3c8d7c3",
+            "object_marking_refs": [
+                "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+            ]
+        },
+        {
+            "id": "relationship--eee3f58f-a6ea-4ab9-9229-30df6b32378d",
+            "type": "relationship",
+            "spec_version": "2.1",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--1dad7483-9956-4d56-a5bf-608cfbca93b1",
+            "target_ref": "intrusion-set--c4beb3ec-d843-456e-a359-114051ca1647",
+            "x_opencti_source_ref": "indicator--1dad7483-9956-4d56-a5bf-608cfbca93b1",
+            "x_opencti_target_ref": "intrusion-set--c4beb3ec-d843-456e-a359-114051ca1647",
+            "created": "2020-06-08T08:57:37.718Z",
+            "modified": "2020-06-08T08:57:37.718Z",
+            "x_opencti_first_seen": "2020-06-03T15:55:59.236Z",
+            "x_opencti_last_seen": "2020-06-03T15:56:11.068Z",
+            "x_opencti_weight": 3,
+            "x_opencti_role_played": "Unknown",
+            "x_opencti_id": "a5aa57f0-f8c6-47b8-89c1-08170d0efb92",
+            "created_by_ref": "identity--8d244a90-2cc0-4600-a5a0-e5a4b3c8d7c3",
+            "object_marking_refs": [
+                "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+            ]
+        },
+        {
+            "id": "intrusion-set--c4beb3ec-d843-456e-a359-114051ca1647",
+            "type": "intrusion-set",
+            "spec_version": "2.1",
+            "name": "Kimsuky",
+            "labels": [
+                "intrusion-set"
+            ],
+            "aliases": [
+                "Velvet Chollima",
+                "Kimsuky"
+            ],
+            "description": "[Kimsuky](https://attack.mitre.org/groups/G0094) is a North Korean-based threat group that has been active since at least September 2013. The group focuses on targeting Korean think tank as well as DPRK/nuclear-related targets. The group was attributed as the actor behind the Korea Hydro & Nuclear Power Co. compromise.(Citation: EST Kimsuky April 2019)(Citation: BRI Kimsuky April 2019)",
+            "first_seen": "2020-06-08T08:57:40.879Z",
+            "last_seen": "2020-06-08T08:57:40.879Z",
+            "created": "2020-06-08T08:57:37.687Z",
+            "modified": "2020-06-09T06:31:04.010Z",
+            "x_opencti_id": "40be2e67-81d1-428d-a915-bf069bd159b1",
+            "created_by_ref": "identity--8d244a90-2cc0-4600-a5a0-e5a4b3c8d7c3",
+            "object_marking_refs": [
+                "marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da"
+            ],
+            "external_references": [
+                {
+                    "id": "external-reference--11658d48-0708-45df-b18d-5ff55bc328f6",
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/groups/G0094",
+                    "external_id": "G0094",
+                    "x_opencti_id": "c05213d9-a340-42d8-9d42-c5f680ef7762",
+                    "x_opencti_created": "2020-06-09T06:30:16.868Z",
+                    "x_opencti_modified": "2020-06-09T06:30:16.868Z"
+                },
+                {
+                    "id": "external-reference--8829a3a0-d433-438f-8f54-2bfd51cc2b97",
+                    "source_name": "Zdnet Kimsuky Dec 2018",
+                    "description": "Cimpanu, C.. (2018, December 5). Cyber-espionage group uses Chrome extension to infect victims. Retrieved August 26, 2019.",
+                    "url": "https://www.zdnet.com/article/cyber-espionage-group-uses-chrome-extension-to-infect-victims/",
+                    "x_opencti_id": "252b8a1a-d78b-42e6-9070-cd66f80141cd",
+                    "x_opencti_created": "2020-06-09T06:30:51.794Z",
+                    "x_opencti_modified": "2020-06-09T06:30:51.794Z"
+                },
+                {
+                    "id": "external-reference--fba07bdf-677e-46a9-8ee6-adfce25c8686",
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/groups/G0094",
+                    "external_id": "G0094",
+                    "x_opencti_id": "dd9bb631-43f6-4338-8121-e90a011a0105",
+                    "x_opencti_created": "2020-06-09T06:30:17.327Z",
+                    "x_opencti_modified": "2020-06-09T06:30:17.327Z"
+                },
+                {
+                    "id": "external-reference--83e76351-206c-4a60-a20b-2be55cafefba",
+                    "source_name": "EST Kimsuky April 2019",
+                    "description": "Alyac. (2019, April 3). Kimsuky Organization Steals Operation Stealth Power. Retrieved August 13, 2019.",
+                    "url": "https://blog.alyac.co.kr/2234",
+                    "x_opencti_id": "841c10c7-5f86-4ef3-aac7-3cb7de472927",
+                    "x_opencti_created": "2020-06-09T06:30:24.717Z",
+                    "x_opencti_modified": "2020-06-09T06:30:24.717Z"
+                },
+                {
+                    "id": "external-reference--042648d2-3d1b-4fda-aacf-2ca184191af3",
+                    "source_name": "Zdnet Kimsuky Dec 2018",
+                    "description": "Cimpanu, C.. (2018, December 5). Cyber-espionage group uses Chrome extension to infect victims. Retrieved August 26, 2019.",
+                    "url": "https://www.zdnet.com/article/cyber-espionage-group-uses-chrome-extension-to-infect-victims/",
+                    "x_opencti_id": "ca73ae57-827e-45fb-873f-da3c0f6b705d",
+                    "x_opencti_created": "2020-06-09T06:30:52.614Z",
+                    "x_opencti_modified": "2020-06-09T06:30:52.614Z"
+                },
+                {
+                    "id": "external-reference--ec560dd2-e265-4aea-9ed2-b23198c9dd42",
+                    "source_name": "BRI Kimsuky April 2019",
+                    "description": "BRI. (2019, April). Kimsuky unveils APT campaign 'Smoke Screen' aimed at Korea and America. Retrieved October 7, 2019.",
+                    "url": "https://brica.de/alerts/alert/public/1255063/kimsuky-unveils-apt-campaign-smoke-screen-aimed-at-korea-and-america/",
+                    "x_opencti_id": "0f2a1c3b-c2d5-4ed1-8ee7-1046bb1aacd7",
+                    "x_opencti_created": "2020-06-09T06:30:35.226Z",
+                    "x_opencti_modified": "2020-06-09T06:30:35.226Z"
+                },
+                {
+                    "id": "external-reference--b94cc419-9427-4d73-b718-85a67e8dc887",
+                    "source_name": "Securelist Kimsuky Sept 2013",
+                    "description": "Tarakanov , D.. (2013, September 11). The \u201cKimsuky\u201d Operation: A North Korean APT?. Retrieved August 13, 2019.",
+                    "url": "https://securelist.com/the-kimsuky-operation-a-north-korean-apt/57915/",
+                    "x_opencti_id": "417c45d3-f7a9-48f7-a5a4-0d8361c1f514",
+                    "x_opencti_created": "2020-06-09T06:30:43.425Z",
+                    "x_opencti_modified": "2020-06-09T06:30:43.425Z"
+                },
+                {
+                    "id": "external-reference--e1f7ba52-5421-4f94-9547-f801ae6e6f38",
+                    "source_name": "EST Kimsuky April 2019",
+                    "description": "Alyac. (2019, April 3). Kimsuky Organization Steals Operation Stealth Power. Retrieved August 13, 2019.",
+                    "url": "https://blog.alyac.co.kr/2234",
+                    "x_opencti_id": "7f531c26-f44d-47b9-8c8d-4e1b171d5939",
+                    "x_opencti_created": "2020-06-09T06:30:25.579Z",
+                    "x_opencti_modified": "2020-06-09T06:30:25.579Z"
+                },
+                {
+                    "id": "external-reference--89ec2fe8-4545-42ab-9143-d589653c169e",
+                    "source_name": "Securelist Kimsuky Sept 2013",
+                    "description": "Tarakanov , D.. (2013, September 11). The \u201cKimsuky\u201d Operation: A North Korean APT?. Retrieved August 13, 2019.",
+                    "url": "https://securelist.com/the-kimsuky-operation-a-north-korean-apt/57915/",
+                    "x_opencti_id": "e0158755-c0e1-45b1-98ee-8bcce248f2a4",
+                    "x_opencti_created": "2020-06-09T06:30:44.182Z",
+                    "x_opencti_modified": "2020-06-09T06:30:44.182Z"
+                },
+                {
+                    "id": "external-reference--3b4d958d-b879-4cb8-9cd5-fa4f6debe1eb",
+                    "source_name": "BRI Kimsuky April 2019",
+                    "description": "BRI. (2019, April). Kimsuky unveils APT campaign 'Smoke Screen' aimed at Korea and America. Retrieved October 7, 2019.",
+                    "url": "https://brica.de/alerts/alert/public/1255063/kimsuky-unveils-apt-campaign-smoke-screen-aimed-at-korea-and-america/",
+                    "x_opencti_id": "15619235-0da5-4b55-8c63-6c68f9350d0e",
+                    "x_opencti_created": "2020-06-09T06:30:34.364Z",
+                    "x_opencti_modified": "2020-06-09T06:30:34.364Z"
+                },
+                {
+                    "id": "external-reference--f2b3c00e-331c-4550-ace0-13e184839cce",
+                    "source_name": "EST Kimsuky April 2019",
+                    "description": "Alyac. (2019, April 3). Kimsuky Organization Steals Operation Stealth Power. Retrieved August 13, 2019.",
+                    "url": "https://blog.alyac.co.kr/2234",
+                    "x_opencti_id": "17be2c88-25d9-490c-afc0-2ab3255a9033",
+                    "x_opencti_created": "2020-06-09T06:30:26.326Z",
+                    "x_opencti_modified": "2020-06-09T06:30:26.326Z"
+                },
+                {
+                    "id": "external-reference--8825152b-b49b-43bc-8497-cd44a0c19fa3",
+                    "source_name": "EST Kimsuky April 2019",
+                    "description": "Alyac. (2019, April 3). Kimsuky Organization Steals Operation Stealth Power. Retrieved August 13, 2019.",
+                    "url": "https://blog.alyac.co.kr/2234",
+                    "x_opencti_id": "e924bff5-3dca-46bc-bc2b-a1cc288721f2",
+                    "x_opencti_created": "2020-06-09T06:30:27.296Z",
+                    "x_opencti_modified": "2020-06-09T06:30:27.296Z"
+                },
+                {
+                    "id": "external-reference--a211bbe3-90c5-4561-999a-1b87c1019ef2",
+                    "source_name": "EST Kimsuky April 2019",
+                    "description": "Alyac. (2019, April 3). Kimsuky Organization Steals Operation Stealth Power. Retrieved August 13, 2019.",
+                    "url": "https://blog.alyac.co.kr/2234",
+                    "x_opencti_id": "44212d7c-0b41-45d9-9ec1-4db87097cb8f",
+                    "x_opencti_created": "2020-06-09T06:30:24.741Z",
+                    "x_opencti_modified": "2020-06-09T06:30:24.741Z"
+                }
+            ]
+        },
+        {
+            "id": "identity--88ec0c6a-13ce-5e39-b486-354fe4a7084f",
+            "type": "identity",
+            "spec_version": "2.1",
+            "name": "admin",
+            "identity_class": "individual",
+            "labels": [
+                "identity"
+            ],
+            "created": "2020-06-08T08:48:43.546Z",
+            "modified": "2020-06-10T08:12:15.034Z",
+            "x_opencti_identity_type": "user",
+            "x_opencti_id": "88ec0c6a-13ce-5e39-b486-354fe4a7084f"
+        },
+        {
+            "type": "marking-definition",
+            "spec_version": "2.1",
+            "id": "marking-definition--f88d31f6-486f-44da-b317-01333bde0b82",
+            "created": "2017-01-20T00:00:00.000Z",
+            "definition_type": "tlp",
+            "name": "TLP:AMBER",
+            "definition": {
+                "tlp": "amber"
+            }
+        },
+        {
+            "id": "note--e125ddb0-1dd0-49b5-b0bd-d1542cd9d6d9",
+            "type": "note",
+            "spec_version": "2.1",
+            "content": "Kimsuky is a North Korean-based threat group that has been active since at least September 2013. The group focuses on targeting Korean think tank as well as DPRK/nuclear-related targets. The group was attributed as the actor behind the Korea Hydro & Nuclear Power Co. compromise.(Citation: EST Kimsuky April 2019)(Citation: BRI Kimsuky April 2019)",
+            "labels": [
+                "note"
+            ],
+            "abstract": "Kimsuky",
+            "created": "2020-06-10T03:39:50.179Z",
+            "modified": "2020-06-10T03:39:50.179Z",
+            "x_opencti_name": "Kimsuky",
+            "x_opencti_id": "fdf418b2-4542-49cd-9893-dfeda3e7b756",
+            "created_by_ref": "identity--88ec0c6a-13ce-5e39-b486-354fe4a7084f",
+            "object_marking_refs": [
+                "marking-definition--f88d31f6-486f-44da-b317-01333bde0b82"
+            ],
+            "object_refs": [
+                "intrusion-set--c4beb3ec-d843-456e-a359-114051ca1647"
+            ]
+        }
+    ]
+}
