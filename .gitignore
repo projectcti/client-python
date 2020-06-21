@@ -18,3 +18,4 @@ Pipfile*
 export_rules/*.yara
 export_rules/*.snort
 export_rules/*.json
+export_rules/*.rules
