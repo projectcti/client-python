@@ -29,9 +29,9 @@ class Rule:
 
     def final_rule(self):
         final_rule = self.action + ' ' + self.protocol + ' ' + self.src + ' ' + self.src_port + ' ' + self.direction + ' ' + self.dst + ' ' + self.dst_port
-        
+
         final_rule += ' ('
-        
+
         if self.sid != '': final_rule += ' sid:"'+ self.sid + '";'
         if self.msg != '': final_rule += ' msg:"'+ self.msg + '";'
         if self.content != '': final_rule += ' content:"'+ self.content + '";'
@@ -44,7 +44,7 @@ class Rule:
         if self.rev != '': final_rule += ' rev:"'+ self.rev + '";'
         if self.protected_content != '': final_rule += ' protected_content:"'+ self.protected_content + '";'
         if self.hash != '': final_rule += ' hash:'+ self.hash + ';'
-        
+
         final_rule += ')'
 
         return final_rule
@@ -80,7 +80,7 @@ opencti_api_client = OpenCTIApiClient(api_url, api_token)
 print("Server connected!")
 print("Getting patterns ...")
 
-nameIntrusionSet = "KIMSUKY"
+nameIntrusionSet = "APT40"
 intrusion_set = opencti_api_client.intrusion_set.read(
     filters=[{"key": "name", "values": [nameIntrusionSet]}]
 )
@@ -101,8 +101,10 @@ for stix_relation in stix_relations:
     indicator = opencti_api_client.indicator.read( 
         id = id_pattern
     )
-
+    if str(indicator["pattern_type"]) != "stix":
+        continue
     indicator_pattern = str(indicator["indicator_pattern"])
+
     type_pattern = indicator_pattern.split(" ")[0][1:]
     pattern = indicator_pattern.split("'")[1]
     print(type_pattern + " : " + pattern)
