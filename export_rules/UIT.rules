@@ -1,0 +1,77 @@
+#2020-07-02 01:48:11.716559
+#================================================
+# [APT40]
+#================================================
+# file:hashes.MD5 : 8114e5e15d4086843cf33e3fca7c945b
+drop tcp any any -> any any ( sid:"1000000"; msg:"file malware detected: 8114e5e15d4086843cf33e3fca7c945b"; protected_content:"8114e5e15d4086843cf33e3fca7c945b"; hash:md5;)
+# domain-name:value : armybar.hopto.org
+drop tcp any any -> any any ( sid:"1000001"; msg:"domain malware detected: armybar.hopto.org"; content:"armybar.hopto.org";)
+# domain-name:value : tomema.myddns.me
+drop tcp any any -> any any ( sid:"1000002"; msg:"domain malware detected: tomema.myddns.me"; content:"tomema.myddns.me";)
+# file:hashes.SHA256 : 77ef350639b767ce0a748f94f723a6a88609c67be485b9d8ff8401729b8003d2
+drop tcp any any -> any any ( sid:"1000003"; msg:"file malware detected: 77ef350639b767ce0a748f94f723a6a88609c67be485b9d8ff8401729b8003d2"; protected_content:"77ef350639b767ce0a748f94f723a6a88609c67be485b9d8ff8401729b8003d2"; hash:sha256;)
+# file:hashes.SHA256 : 145daf50aefb7beec32556fd011e10c9eaa71e356649edfce4404409c1e8fa30
+drop tcp any any -> any any ( sid:"1000004"; msg:"file malware detected: 145daf50aefb7beec32556fd011e10c9eaa71e356649edfce4404409c1e8fa30"; protected_content:"145daf50aefb7beec32556fd011e10c9eaa71e356649edfce4404409c1e8fa30"; hash:sha256;)
+# file:hashes.SHA256 : 93810c5fd9a287d85c182d2ad13e7d30f99df76e55bb40e5bc7a486d259810c8
+drop tcp any any -> any any ( sid:"1000005"; msg:"file malware detected: 93810c5fd9a287d85c182d2ad13e7d30f99df76e55bb40e5bc7a486d259810c8"; protected_content:"93810c5fd9a287d85c182d2ad13e7d30f99df76e55bb40e5bc7a486d259810c8"; hash:sha256;)
+# file:hashes.SHA256 : ab541df861c6045a17006969dac074a7d300c0a8edd0a5815c8b871b62ecdda7
+drop tcp any any -> any any ( sid:"1000006"; msg:"file malware detected: ab541df861c6045a17006969dac074a7d300c0a8edd0a5815c8b871b62ecdda7"; protected_content:"ab541df861c6045a17006969dac074a7d300c0a8edd0a5815c8b871b62ecdda7"; hash:sha256;)
+# file:hashes.SHA256 : 523cbdaf31ddc920e5b6c873f3ab42fb791fb4c9d1f4d9e6a7f174105d4f72a1
+drop tcp any any -> any any ( sid:"1000007"; msg:"file malware detected: 523cbdaf31ddc920e5b6c873f3ab42fb791fb4c9d1f4d9e6a7f174105d4f72a1"; protected_content:"523cbdaf31ddc920e5b6c873f3ab42fb791fb4c9d1f4d9e6a7f174105d4f72a1"; hash:sha256;)
+# file:hashes.SHA256 : feca9ad5058bc8571d89c9d5a1eebce09e709cc82954f8dce1564e8cc6750a77
+drop tcp any any -> any any ( sid:"1000008"; msg:"file malware detected: feca9ad5058bc8571d89c9d5a1eebce09e709cc82954f8dce1564e8cc6750a77"; protected_content:"feca9ad5058bc8571d89c9d5a1eebce09e709cc82954f8dce1564e8cc6750a77"; hash:sha256;)
+# file:hashes.SHA256 : 925f404b0207055f2a524d9825c48aa511199da95120ed7aafa52d3f7594b0c9
+drop tcp any any -> any any ( sid:"1000009"; msg:"file malware detected: 925f404b0207055f2a524d9825c48aa511199da95120ed7aafa52d3f7594b0c9"; protected_content:"925f404b0207055f2a524d9825c48aa511199da95120ed7aafa52d3f7594b0c9"; hash:sha256;)
+# file:hashes.MD5 : 850a163ce1f9cff0367854038d8cfa7e
+drop tcp any any -> any any ( sid:"1000010"; msg:"file malware detected: 850a163ce1f9cff0367854038d8cfa7e"; protected_content:"850a163ce1f9cff0367854038d8cfa7e"; hash:md5;)
+# file:hashes.MD5 : afbe00e755a2cf963f0eedbb4e310198
+drop tcp any any -> any any ( sid:"1000011"; msg:"file malware detected: afbe00e755a2cf963f0eedbb4e310198"; protected_content:"afbe00e755a2cf963f0eedbb4e310198"; hash:md5;)
+# file:hashes.SHA1 : a55bd3f15ce743c9cda7bec05afe50b9aefa4683
+drop tcp any any -> any any ( sid:"1000012"; msg:"file malware detected: a55bd3f15ce743c9cda7bec05afe50b9aefa4683"; protected_content:"a55bd3f15ce743c9cda7bec05afe50b9aefa4683"; hash:sha1;)
+# file:hashes.SHA1 : 5f7f0b1419448c5fe1a8051ac8cb2cf7b95a3ffa
+drop tcp any any -> any any ( sid:"1000013"; msg:"file malware detected: 5f7f0b1419448c5fe1a8051ac8cb2cf7b95a3ffa"; protected_content:"5f7f0b1419448c5fe1a8051ac8cb2cf7b95a3ffa"; hash:sha1;)
+# file:hashes.SHA1 : 517894e4443b8d3c1204eef81247958772280538
+drop tcp any any -> any any ( sid:"1000014"; msg:"file malware detected: 517894e4443b8d3c1204eef81247958772280538"; protected_content:"517894e4443b8d3c1204eef81247958772280538"; hash:sha1;)
+# file:hashes.SHA256 : 06a4246be400ad0347e71b3c4ecd607edda59fbf873791d3772ce001f580c1d3
+drop tcp any any -> any any ( sid:"1000015"; msg:"file malware detected: 06a4246be400ad0347e71b3c4ecd607edda59fbf873791d3772ce001f580c1d3"; protected_content:"06a4246be400ad0347e71b3c4ecd607edda59fbf873791d3772ce001f580c1d3"; hash:sha256;)
+#================================================
+# [APT Group]
+#================================================
+# file:hashes.SHA256 : 5143c5d8715cfc1e70e9db00184592c6cfbb4b9312ee02739d098cf6bc83eff9
+drop tcp any any -> any any ( sid:"1000016"; msg:"file malware detected: 5143c5d8715cfc1e70e9db00184592c6cfbb4b9312ee02739d098cf6bc83eff9"; protected_content:"5143c5d8715cfc1e70e9db00184592c6cfbb4b9312ee02739d098cf6bc83eff9"; hash:sha256;)
+# domain-name:value : yenile.asia
+drop tcp any any -> any any ( sid:"1000017"; msg:"domain malware detected: yenile.asia"; content:"yenile.asia";)
+# file:hashes.SHA256 : 8cfd023f1aa40774a9b6ef3dbdfb75dea10eb7f601c308f8837920417f1ed702
+drop tcp any any -> any any ( sid:"1000018"; msg:"file malware detected: 8cfd023f1aa40774a9b6ef3dbdfb75dea10eb7f601c308f8837920417f1ed702"; protected_content:"8cfd023f1aa40774a9b6ef3dbdfb75dea10eb7f601c308f8837920417f1ed702"; hash:sha256;)
+# domain-name:value : time.updateeset.com
+drop tcp any any -> any any ( sid:"1000019"; msg:"domain malware detected: time.updateeset.com"; content:"time.updateeset.com";)
+# file:hashes.SHA256 : 7f1325c5a9266e649743ba714d02c819a8bfc7fd58d58e28a2b123ea260c0ce2
+drop tcp any any -> any any ( sid:"1000020"; msg:"file malware detected: 7f1325c5a9266e649743ba714d02c819a8bfc7fd58d58e28a2b123ea260c0ce2"; protected_content:"7f1325c5a9266e649743ba714d02c819a8bfc7fd58d58e28a2b123ea260c0ce2"; hash:sha256;)
+# file:hashes.SHA256 : 7963ead16b6277e5b4fbd5d0b683593877d50a6ea7e64d2fc5def605eba1162a
+drop tcp any any -> any any ( sid:"1000021"; msg:"file malware detected: 7963ead16b6277e5b4fbd5d0b683593877d50a6ea7e64d2fc5def605eba1162a"; protected_content:"7963ead16b6277e5b4fbd5d0b683593877d50a6ea7e64d2fc5def605eba1162a"; hash:sha256;)
+# url:value : https://yenile.asia/YOOMANHOWYOUDARE/indexb.dotm
+drop tcp any any -> any any ( sid:"1000022"; msg:"url malware detected: https://yenile.asia/YOOMANHOWYOUDARE/indexb.dotm"; content:"https://yenile.asia/YOOMANHOWYOUDARE/indexb.dotm";)
+# file:hashes.SHA256 : aeb4c3ff5b5a62f5b7fcb1f958885f76795ee792c12244cee7e36d9050cfb298
+drop tcp any any -> any any ( sid:"1000023"; msg:"file malware detected: aeb4c3ff5b5a62f5b7fcb1f958885f76795ee792c12244cee7e36d9050cfb298"; protected_content:"aeb4c3ff5b5a62f5b7fcb1f958885f76795ee792c12244cee7e36d9050cfb298"; hash:sha256;)
+# file:hashes.SHA256 : 0eba651e5d54bd5bb502327daef6979de7e3eb63ba518756f659f373aa5f4f8b
+drop tcp any any -> any any ( sid:"1000024"; msg:"file malware detected: 0eba651e5d54bd5bb502327daef6979de7e3eb63ba518756f659f373aa5f4f8b"; protected_content:"0eba651e5d54bd5bb502327daef6979de7e3eb63ba518756f659f373aa5f4f8b"; hash:sha256;)
+# file:hashes.SHA256 : 5f49a47abc8e8d19bd5ed3625f28561ef584b1a226df09d45455fbf38c73a79c
+drop tcp any any -> any any ( sid:"1000025"; msg:"file malware detected: 5f49a47abc8e8d19bd5ed3625f28561ef584b1a226df09d45455fbf38c73a79c"; protected_content:"5f49a47abc8e8d19bd5ed3625f28561ef584b1a226df09d45455fbf38c73a79c"; hash:sha256;)
+# file:hashes.SHA1 : 6e427249c476075b5fee256408ea66caef334b9e
+drop tcp any any -> any any ( sid:"1000026"; msg:"file malware detected: 6e427249c476075b5fee256408ea66caef334b9e"; protected_content:"6e427249c476075b5fee256408ea66caef334b9e"; hash:sha1;)
+# file:hashes.MD5 : 3a269baf0c7d1de1f44397fdddafa1e7
+drop tcp any any -> any any ( sid:"1000027"; msg:"file malware detected: 3a269baf0c7d1de1f44397fdddafa1e7"; protected_content:"3a269baf0c7d1de1f44397fdddafa1e7"; hash:md5;)
+# file:hashes.SHA1 : 044b4ba0301a33a824143cab77b8a6630b6051d9
+drop tcp any any -> any any ( sid:"1000028"; msg:"file malware detected: 044b4ba0301a33a824143cab77b8a6630b6051d9"; protected_content:"044b4ba0301a33a824143cab77b8a6630b6051d9"; hash:sha1;)
+# url:value : http://time.updateeset.com/jquery-3.3.1.min.js
+drop tcp any any -> any any ( sid:"1000029"; msg:"url malware detected: http://time.updateeset.com/jquery-3.3.1.min.js"; content:"http://time.updateeset.com/jquery-3.3.1.min.js";)
+# file:hashes.SHA256 : 259632b416b4b869fc6dc2d93d2b822dedf6526c0fa57723ad5c326a92d30621
+drop tcp any any -> any any ( sid:"1000030"; msg:"file malware detected: 259632b416b4b869fc6dc2d93d2b822dedf6526c0fa57723ad5c326a92d30621"; protected_content:"259632b416b4b869fc6dc2d93d2b822dedf6526c0fa57723ad5c326a92d30621"; hash:sha256;)
+# file:hashes.MD5 : c2707e94901c09b3575cf41aeaec40a1
+drop tcp any any -> any any ( sid:"1000031"; msg:"file malware detected: c2707e94901c09b3575cf41aeaec40a1"; protected_content:"c2707e94901c09b3575cf41aeaec40a1"; hash:md5;)
+# file:hashes.MD5 : 987ceec8c3eb06feb020b2954bb93793
+drop tcp any any -> any any ( sid:"1000032"; msg:"file malware detected: 987ceec8c3eb06feb020b2954bb93793"; protected_content:"987ceec8c3eb06feb020b2954bb93793"; hash:md5;)
+# file:hashes.SHA1 : 04c0cad493eb739a66302dc84451df5db1911775
+drop tcp any any -> any any ( sid:"1000033"; msg:"file malware detected: 04c0cad493eb739a66302dc84451df5db1911775"; protected_content:"04c0cad493eb739a66302dc84451df5db1911775"; hash:sha1;)
+# url:value : http://time.updateeset.com/jquery-3.3.1.slim.min.js
+drop tcp any any -> any any ( sid:"1000034"; msg:"url malware detected: http://time.updateeset.com/jquery-3.3.1.slim.min.js"; content:"http://time.updateeset.com/jquery-3.3.1.slim.min.js";)

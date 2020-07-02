@@ -125,7 +125,8 @@ class IntrusionSet:
             first = 500
 
         self.opencti.log(
-            "info", "Listing Intrusion-Sets with filters " + json.dumps(filters) + "."
+            # "info", "Listing Intrusion-Sets with filters " + json.dumps(filters) + "."
+            "info", "Filtering with tags ..."
         )
         query = (
             """
