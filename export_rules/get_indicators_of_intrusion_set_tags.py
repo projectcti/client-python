@@ -95,6 +95,7 @@ custom_attributes = """
     }  
 """
 while True:
+    print("Colecting tags: University")
     final_intrusion_set_tags = []
     data = opencti_api_client.intrusion_set.list(
         first=50, customAttributes=custom_attributes, withPagination=True
@@ -103,15 +104,15 @@ while True:
 
     while data["pagination"]["hasNextPage"]:
         after = data["pagination"]["endCursor"]
-        print("Listing indicators after " + after)
-        data = opencti_api_client.indicator.list(
+        print("Listing tags after " + str(base64.b64decode(after)))
+        data = opencti_api_client.intrusion_set.list(
             first=50, after=after, customAttributes=custom_attributes, withPagination=True
         )
         final_intrusion_set_tags = final_intrusion_set_tags + data["entities"]
 
     # Print
     sid = 1000000
-    fileName = "UIT.rules"
+    fileName = "University.rules"
     f = open(fileName, "w", encoding="utf-8")
     f.write("#" + str(datetime.now()) + "\n")
     f.close()
@@ -120,7 +121,7 @@ while True:
         tag = intrusion_set["tags"]
         
         if tag != []:
-            if str(tag[0]["value"]) == "UIT":
+            if str(tag[0]["value"]) == "University":
                 print(intrusion_set["id"])
 
                 stix_relations = opencti_api_client.stix_relation.list(
@@ -130,7 +131,7 @@ while True:
                 print("=============================================\n")
                 print("Export rules from: [" + intrusion_set["name"] + "]\n")
 
-                fileName = "UIT.rules"
+                fileName = "University.rules"
                 f = open(fileName, "a", encoding="utf-8")
                 
                 f.write("#================================================\n")
@@ -164,5 +165,5 @@ while True:
                     # if sid > 1000005: exit()
                 f.close()
 
-    print("Sleep 10 seconds ...")
-    time.sleep(10)
+    print("Waiting update ...")
+    time.sleep(1000)
