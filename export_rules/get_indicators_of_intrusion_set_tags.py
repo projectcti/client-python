@@ -122,7 +122,9 @@ while True:
         
         if tag != []:
             if str(tag[0]["value"]) == "University":
-                print(intrusion_set["id"])
+                # print(intrusion_set["id"])
+                print("=============================================\n")
+                print("Getting stix_relation of [" + intrusion_set["name"] + "]\n")
 
                 stix_relations = opencti_api_client.stix_relation.list(
                     fromId=intrusion_set["id"], toTypes=["Indicator"], inferred=True
@@ -130,7 +132,7 @@ while True:
 
                 print("=============================================\n")
                 print("Export rules from: [" + intrusion_set["name"] + "]\n")
-
+                # exit()
                 fileName = "University.rules"
                 f = open(fileName, "a", encoding="utf-8")
                 
@@ -164,6 +166,8 @@ while True:
                     # time.sleep(0.5)
                     # if sid > 1000005: exit()
                 f.close()
+
+    print("\nSuccessfully Export Rules with tags University!\n")
 
     print("Waiting update ...")
     time.sleep(1000)
