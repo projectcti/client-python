@@ -6,8 +6,11 @@ from pathlib import Path
 from datetime import datetime
 from pycti import OpenCTIApiClient
 
+Indicator_tags = "University"
+
 class Rule:
     def __init__(self):
+        self.id_pattern = ''
         self.action = 'drop'
         self.protocol = 'tcp'
         self.src = 'any'
@@ -50,19 +53,22 @@ class Rule:
 
         return final_rule
 
-def createRule(type_pattern, pattern):
+def createRule(type_pattern, pattern, id_pattern):
     rule = Rule()
+
+    rule.id_pattern = id_pattern
+    rule.msg = "[ProjectCTI rules - Pattern ID: " + id_pattern + "] "
 
     if "url:value" in type_pattern:
         rule.content = pattern
-        rule.msg = "url malware detected: " + pattern
+        rule.msg += "Url malware detected: " + pattern
     elif "hash" in type_pattern:
         rule.hash = type_pattern.split(".")[1].lower()
         rule.protected_content = pattern
-        rule.msg = "file malware detected: " + pattern
+        rule.msg += "File malware detected: " + pattern
     elif "domain-name:value" in type_pattern:
         rule.content = pattern
-        rule.msg = "domain malware detected: " + pattern
+        rule.msg += "Domain malware detected: " + pattern
 
     return rule.final_rule()
 
@@ -95,7 +101,7 @@ custom_attributes = """
     }  
 """
 while True:
-    print("Colecting tags: University")
+    print("Colecting tags: " + Indicator_tags)
     final_intrusion_set_tags = []
     data = opencti_api_client.intrusion_set.list(
         first=50, customAttributes=custom_attributes, withPagination=True
@@ -112,7 +118,7 @@ while True:
 
     # Print
     sid = 1000000
-    fileName = "University.rules"
+    fileName = Indicator_tags + ".rules"
     f = open(fileName, "w", encoding="utf-8")
     f.write("#" + str(datetime.now()) + "\n")
     f.close()
@@ -121,7 +127,7 @@ while True:
         tag = intrusion_set["tags"]
         
         if tag != []:
-            if str(tag[0]["value"]) == "University":
+            if str(tag[0]["value"]) == Indicator_tags:
                 # print(intrusion_set["id"])
                 print("=============================================\n")
                 print("Getting stix_relation of [" + intrusion_set["name"] + "]\n")
@@ -133,7 +139,6 @@ while True:
                 print("=============================================\n")
                 print("Export rules from: [" + intrusion_set["name"] + "]\n")
                 # exit()
-                fileName = "University.rules"
                 f = open(fileName, "a", encoding="utf-8")
                 
                 f.write("#================================================\n")
@@ -155,7 +160,7 @@ while True:
                     pattern = indicator_pattern.split("'")[1]
                     print(type_pattern + " : " + pattern)
 
-                    rule = createRule(type_pattern, pattern)
+                    rule = createRule(type_pattern, pattern, id_pattern)
                     print(" ===> Rule: " + rule)
 
                     sid+=1
@@ -167,7 +172,6 @@ while True:
                     # if sid > 1000005: exit()
                 f.close()
 
-    print("\nSuccessfully Export Rules with tags University!\n")
-
+    print("\nSuccessfully Export Rules: " + Indicator_tags + ".rules\n")
     print("Waiting update ...")
     time.sleep(1000)
